@@ -1,14 +1,4 @@
-function getRandomInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min +1)) + min;
-}
-
-// une fonction pour lancer 1d6 basée sur la fonction précédente
-function roll1d6() {
-    score = getRandomInt(1, 6);
-    return score;
-}
+// --- VARIABLES ---
 
 // on cible le bouton pour lancer le dé
 let rollButton = document.getElementById("rollMe");
@@ -28,6 +18,39 @@ let activePlayer = document.getElementById("active-player");
 
 // on cible l'icône bootstrap du dé
 diceImg = document.getElementById('dice-img');
+
+// on cible les barres de progrès
+let progressPl1 = document.getElementById("progress-pl1");
+let progressPl2 = document.getElementById("progress-pl2");
+
+// --- FONCTIONS ---
+
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min +1)) + min;
+}
+
+// une fonction pour lancer 1d6 basée sur la fonction précédente
+function roll1d6() {
+    score = getRandomInt(1, 6);
+    return score;
+}
+
+// une fonction pour changer de couleur les éléments suivant le joueur actif
+function changeColor() {
+    if(activePlayer.innerHTML == "Blue Wizard") {
+        roundScore.style.backgroundColor = "#3437F0";
+        rollButton.style.backgroundColor = "#3437F0";
+        holdButton.style.backgroundColor = "#3437F0";
+    } else {
+        roundScore.style.backgroundColor = "#BF6363";
+        rollButton.style.backgroundColor = "#BF6363";
+        holdButton.style.backgroundColor = "#BF6363";
+    }
+}
+
+// --- EVENEMENTS ---
 
 rollButton.addEventListener("click", () => {
     let diceRoll = roll1d6();
@@ -60,10 +83,12 @@ rollButton.addEventListener("click", () => {
     if (diceRoll == 1) {
         roundScore.innerText = 0;
         // et le joueur actif change
-        if(activePlayer.innerText == "Joueur 1") {
-            activePlayer.innerText = "Joueur 2";
+        if(activePlayer.innerText == "Blue Wizard") {
+            activePlayer.innerText = "Red Wizard";
+            changeColor();
         } else {
-            activePlayer.innerText = "Joueur 1";
+            activePlayer.innerText = "Blue Wizard";
+            changeColor();
         }
 
     } else {
@@ -73,21 +98,25 @@ rollButton.addEventListener("click", () => {
 });
 
 // on crée une fonction pour transférer le score de la manche vers le score global du joueur
+// (ici on soustrait en fait la valeur du round à celle de la barre de progrès = PV)
 holdButton.addEventListener("click", () => {
-    
+
     //si le joueur en cours est le joueur 1
-    if(activePlayer.innerText == "Joueur 1") {
-        holdScorePl1.innerText = parseInt(holdScorePl1.innerText) + parseInt(roundScore.innerText);
-        activePlayer.innerText = "Joueur 2";
+    if(activePlayer.innerText == "Blue Wizard") {
+        holdScorePl2.innerText = parseInt(holdScorePl2.innerText) - parseInt(roundScore.innerText);
+        progressPl2.style.width = holdScorePl2.innerText + "%";
+        activePlayer.innerText = "Red Wizard";
+        changeColor();
 
     //si le joueur en cours est le joueur 2
     } else {
-        holdScorePl2.innerText = parseInt(holdScorePl2.innerText) + parseInt(roundScore.innerText);
-        activePlayer.innerText = "Joueur 1";
-
+        holdScorePl1.innerText = parseInt(holdScorePl1.innerText) - parseInt(roundScore.innerText);
+        progressPl1.style.width = holdScorePl2.innerText + "%";
+        activePlayer.innerText = "Blue Wizard";
+        changeColor();
     }
     
     // dans tous les cas, on remet le compteur de la manche à zéro
-    roundScore.innerText = "0";  
+    roundScore.innerText = "0";
 
 });

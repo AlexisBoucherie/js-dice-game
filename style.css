@@ -25,7 +25,7 @@ header, .upper-screen, .lower-screen {
     padding: 10px;
 }
 
-header button, .power p, .player p {
+header button, .power p, .player {
     background-color: #f5f7b0;
 }
 
@@ -44,6 +44,7 @@ header button {
     justify-content: space-around;
     align-items: center;
     width: 40vw;
+    border-radius: 10px;
 }
 
 header i {
@@ -59,7 +60,6 @@ header p {
 .upper-screen {
     flex-wrap: wrap;
     height: 30vh;
-    border: 1px solid red;
     justify-content: space-around;
     align-items: center;
 }
@@ -74,12 +74,16 @@ header p {
 }
 
 .power {
-    width: 40vw;
     text-align: center;
-    border: 1px solid yellow;
     display: flex;
     flex-direction: column;
-    align-content: space-around;
+    align-content: space-between;
+}
+
+.power #active-player {
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: white;
 }
 
 #round {
@@ -105,7 +109,6 @@ header p {
 
 .lower-screen {
     height: 50vh;
-    border: 1px solid blue;
     background-image: url('img/battleground_mobile.jpeg');
     background-size: cover;
     background-position: center;
@@ -125,7 +128,6 @@ header p {
 
 .wizards {
     height: 25vh;
-    border: 1px solid red;
     position: relative;
 }
 
@@ -144,4 +146,20 @@ header p {
     right: 10px;
 }
 
-/* PENSER A CIBLER L'ID POWER AVEC LE JS POUR CHANGER LA CLASSE ET LE STYLE SUIVANT JOUEUR EN COURS */
+.progress-bar {
+    width: 95%;
+    height: 1em;
+    background-color: #767676;
+    display: flex;
+    margin: 5px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#progress-pl1, #progress-pl2 {
+    width: 100%;
+    background-color: greenyellow;
+    border-radius: 10px;
+}
+
+/* Bouton new game = refresh page */
