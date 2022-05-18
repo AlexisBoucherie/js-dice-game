@@ -1,23 +1,63 @@
-main {
+/* General */
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header, .upper-screen {
+    display: flex;
+}
+
+header, .upper-screen, .lower-screen {
+    padding: 10px;
+}
+
+/* Header */
+
+header {
+    justify-content: space-around;
+}
+
+header button {
+    width: 
+}
+
+header i {
+    font-size: 40px;
+}
+
+/* Partie haute de l'écran */
+
+.upper-screen {
+    flex-wrap: wrap;
+    height: 35vh;
+    border: 1px solid red;
+    justify-content: space-around;
+}
+
+.upper-screen i {
+    font-size: 100px;
+}
+
+#active-player {
+    display: none;
+}
+
+.power {
+    height: fit-content;
     text-align: center;
-    display: block;
 }
 
-div {
-    width: 200px;
-    margin: 0 auto;
-    border: red 1px solid;
+.power, .upper-screen button {
+    width: 40vw;
 }
 
-button {
-    width: 150px;
-    height: 50px;
-    border-radius: 10px;
-    border: none;
-    background-color: goldenrod;
-    margin-bottom: 30px;
+/* Partie basse de l'écran */
+
+.lower-screen {
+    height: 50vh;
+    border: 1px solid blue;
 }
 
-i {
-    font-size: 50px;
-}
+/* PENSER A CIBLER L'ID POWER AVEC LE JS POUR CHANGER LA CLASSE ET LE STYLE SUIVANT JOUEUR EN COURS */

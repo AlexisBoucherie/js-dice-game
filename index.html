@@ -16,9 +16,9 @@
     </header>
     <main>
         <div class="upper-screen">
-            <span id="active-player" style="display: hidden">Joueur 1</span>
+            <span id="active-player">Joueur 1</span>
             <i id="dice-img"class="bi bi-question-square"></i>
-            <div class="power">
+            <div class="power" id="power">
                 <span id="round">0</span>
                 <p>Spell power</p>
             </div>
@@ -26,23 +26,18 @@
             <button id="holdMe">RELEASE SPELL!</button>
         </div>
         <div class="lower-screen">
-            <div class="player2"></div>
+            <div class="player2">
+                <p>Score GLOBAL (J2) : <span id="global-pl2">0</span></p>
+            </div>
             <div class="wizards">
                 <!-- img wizard1
                 img wizard2 -->
             </div>
-            <div class="player1"></div>
+            <div class="player1">
+                <p>Score GLOBAL (J1) : <span id="global-pl1">0</span></p>
+            </div>
 
         </div>
-
-        <!-- <p><span id="active-player">Joueur 1</span>, à vous de jouer !</p>
-        <div>
-            
-        </div>
-        <div>
-            <p>Score GLOBAL (J1) : <span id="global-pl1">0</span></p>
-            <p>Score GLOBAL (J2) : <span id="global-pl2">0</span></p>
-        </div> -->
     </main>
     <script src="script.js"></script>
 </body>
