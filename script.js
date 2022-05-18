@@ -119,4 +119,25 @@ holdButton.addEventListener("click", () => {
     // dans tous les cas, on remet le compteur de la manche à zéro
     roundScore.innerText = "0";
 
+    // on change la couleur des barres suivant leur valeur
+    if(parseInt(holdScorePl1.innerText) < 25) {
+        progressPl1.style.backgroundColor = "red";
+    } else if(parseInt(holdScorePl1.innerText) < 50) {
+        progressPl1.style.backgroundColor = "orange";
+    } else if(parseInt(holdScorePl1.innerText) < 75) {
+        progressPl1.style.backgroundColor = "greenyellow";        
+    } else {
+        progressPl1.style.backgroundColor = "green";
+    }
+
+    if(parseInt(holdScorePl2.innerText) < 25) {
+        progressPl2.style.backgroundColor = "red";
+    } else if(parseInt(holdScorePl2.innerText) < 50) {
+        progressPl2.style.backgroundColor = "orange";
+    } else if(parseInt(holdScorePl2.innerText) < 75) {
+        progressPl2.style.backgroundColor = "greenyellow";        
+    } else {
+        progressPl2.style.backgroundColor = "green";
+    }
+
 });
