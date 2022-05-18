@@ -4,7 +4,7 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min +1)) + min;
 }
 
-// une fonctio pour lancer 1d6 basée sur la fonction précédente
+// une fonction pour lancer 1d6 basée sur la fonction précédente
 function roll1d6() {
     score = getRandomInt(1, 6);
     return score;
@@ -13,33 +13,32 @@ function roll1d6() {
 // on cible le bouton pour lancer le dé
 const rollButton = document.getElementById("rollMe");
 
-rollButton.addEventListener("click", function() {
+rollButton.addEventListener("click", () => {
     var diceRoll = roll1d6();
-    diceImg = document.querySelector('img');
+    diceImg = document.getElementById('dice-img');
     // suivant le résultat du dé, on affiche une icône différente
     switch (diceRoll) {
         case 1:
-            diceImg.setAttribute('src', 'img/dé01.png');
-
+            diceImg.className = "bi bi-dice-1";
             break;
         case 2:
-            diceImg.setAttribute('src', 'img/dé02.png');
+            diceImg.className = "bi bi-dice-2";
             break;
         case 3:
-            diceImg.setAttribute('src', 'img/dé03.png');
+            diceImg.className = "bi bi-dice-3";
             break;
         case 4:
-            diceImg.setAttribute('src', 'img/dé04.png');
+            diceImg.className = "bi bi-dice-4";
             break;
         case 5:
-            diceImg.setAttribute('src', 'img/dé05.png');
+            diceImg.className = "bi bi-dice-5";
             break;
         case 6:
-            diceImg.setAttribute('src', 'img/dé06.png');
+            diceImg.className = "bi bi-dice-6";
             break;
         default:
             break;
-    }
+        }
     
     // roundScore est le score de la manche
     const roundScore = document.getElementById("round");
