@@ -3,13 +3,21 @@
 body {
     margin: 0;
     padding: 0;
+    font-size: 20px;
+    background-image: url("img/brickwall.jpeg");
+    background-repeat: repeat;
+    background-size: 75vw;
+}
+
+main p {
+    font-size: 1em;
 }
 
 button {
     border: none;
 }
 
-header, .upper-screen {
+header, .upper-screen, .lower-screen {
     display: flex;
 }
 
@@ -17,7 +25,7 @@ header, .upper-screen, .lower-screen {
     padding: 10px;
 }
 
-header button, .power p, .player {
+header button, .power p, .player p {
     background-color: #f5f7b0;
 }
 
@@ -32,11 +40,18 @@ header {
 }
 
 header button {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     width: 40vw;
 }
 
 header i {
-    font-size: 40px;
+    font-size: 30px;
+}
+
+header p {
+    font-size: 1.2em;
 }
 
 /* Partie haute de l'écran */
@@ -47,28 +62,24 @@ header i {
     border: 1px solid red;
     justify-content: space-around;
     align-items: center;
-    background-image: url('img/brickwall.jpeg');
-    background-size: contain;
-    background-position: center;
 }
 
 .upper-screen i {
     font-size: 100px;
     line-height: 100px;
     height: 95px;
+    width: 95px;
     background-color: white;
     border-radius: 20px;
 }
 
-#active-player {
-    display: none;
-}
-
 .power {
-    height: fit-content;
     width: 40vw;
     text-align: center;
     border: 1px solid yellow;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
 }
 
 #round {
@@ -98,6 +109,39 @@ header i {
     background-image: url('img/battleground_mobile.jpeg');
     background-size: cover;
     background-position: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.player {
+    width: 45vw;
+    width: 60vw;
+    border: 1px solid orange;
+}
+
+.pl2 {
+    align-self: flex-end;
+}
+
+.wizards {
+    height: 25vh;
+    border: 1px solid red;
+    position: relative;
+}
+
+.wizards img {
+    position: absolute;
+    width: 128px;
+}
+
+.pl1-img {
+    bottom: 10px;
+    left: 10px;
+}
+
+.pl2-img {
+    top: 10px;
+    right: 10px;
 }
 
 /* PENSER A CIBLER L'ID POWER AVEC LE JS POUR CHANGER LA CLASSE ET LE STYLE SUIVANT JOUEUR EN COURS */

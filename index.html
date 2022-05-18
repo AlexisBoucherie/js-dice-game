@@ -11,14 +11,14 @@
 </head>
 <body>
     <header>
-        <button id="rules"><i class="bi bi-info-circle"></i> RULES</button>
-        <button id="newGame">NEW GAME <i class="bi bi-arrow-clockwise"></i></button>
+        <button id="rules"><i class="bi bi-info-circle"></i><p> RULES</p></button>
+        <button id="newGame"><p>NEW GAME </p><i class="bi bi-arrow-clockwise"></i></button>
     </header>
     <main>
         <div class="upper-screen">
-            <span id="active-player">Joueur 1</span>
             <i id="dice-img"class="bi bi-question-square"></i>
             <div class="power" id="power">
+                <div id="active-player">Joueur 1</div>
                 <div id="round">0</div>
                 <p>Spell power</p>
             </div>
@@ -30,8 +30,8 @@
                 <p>Score GLOBAL (J2) : <span id="global-pl2">0</span></p>
             </div>
             <div class="wizards">
-                <!-- img wizard1
-                img wizard2 -->
+                <img src="img/blue-wizard.png" class="pl1-img" alt="Player 1 - Blue Wizard">
+                <img src="img/red-wizard.png" class="pl2-img" alt="Player 2 - Red Wizard">
             </div>
             <div class="player pl1">
                 <p>Score GLOBAL (J1) : <span id="global-pl1">0</span></p>
