@@ -25,12 +25,16 @@ header, .upper-screen, .lower-screen {
     padding: 10px;
 }
 
-header button, .power p, .player {
+.power p, .player {
     background-color: #f5f7b0;
 }
 
 #round, .upper-screen button {
     color: white;
+}
+
+.diceImg, button, .power p, .player {
+    box-shadow: 2px 2px 4px black;
 }
 
 /* Header */
@@ -45,6 +49,7 @@ header button {
     align-items: center;
     width: 40vw;
     border-radius: 10px;
+    background-color: #f1c791;
 }
 
 header i {
@@ -78,6 +83,10 @@ header p {
     display: flex;
     flex-direction: column;
     align-content: space-between;
+}
+
+.power p {
+    padding: 2px;
 }
 
 .power #active-player {
@@ -117,13 +126,12 @@ header p {
 }
 
 .player {
-    width: 45vw;
     width: 60vw;
-    border: 1px solid orange;
 }
 
 .pl2 {
     align-self: flex-end;
+    text-align: right;
 }
 
 .wizards {
@@ -162,4 +170,27 @@ header p {
     border-radius: 10px;
 }
 
-/* Bouton new game = refresh page */
+.player, .power p {
+    border-radius: 20px 10px;
+}
+
+.player p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+.pl1 p {
+    padding: 2px 0 2px 15px;
+}
+
+.pl2 p {
+    padding: 2px 15px 2px 0;
+}
+
+/* --- TO DO LIST ---
+- Bouton new game = refresh page
+- Set "rules" button
+- Centrer % barre de progrès
+- Changer couleur barre suivant PV
+- Desktop version
+*/
