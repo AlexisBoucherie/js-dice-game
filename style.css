@@ -5,12 +5,24 @@ body {
     padding: 0;
 }
 
+button {
+    border: none;
+}
+
 header, .upper-screen {
     display: flex;
 }
 
 header, .upper-screen, .lower-screen {
     padding: 10px;
+}
+
+header button, .power p, .player {
+    background-color: #f5f7b0;
+}
+
+#round, .upper-screen button {
+    color: white;
 }
 
 /* Header */
@@ -20,7 +32,7 @@ header {
 }
 
 header button {
-    width: 
+    width: 40vw;
 }
 
 header i {
@@ -31,13 +43,21 @@ header i {
 
 .upper-screen {
     flex-wrap: wrap;
-    height: 35vh;
+    height: 30vh;
     border: 1px solid red;
     justify-content: space-around;
+    align-items: center;
+    background-image: url('img/brickwall.jpeg');
+    background-size: contain;
+    background-position: center;
 }
 
 .upper-screen i {
     font-size: 100px;
+    line-height: 100px;
+    height: 95px;
+    background-color: white;
+    border-radius: 20px;
 }
 
 #active-player {
@@ -46,11 +66,28 @@ header i {
 
 .power {
     height: fit-content;
+    width: 40vw;
     text-align: center;
+    border: 1px solid yellow;
+}
+
+#round {
+    background-color: #6060FA;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    margin: 0 auto;
 }
 
 .power, .upper-screen button {
     width: 40vw;
+}
+
+.upper-screen button {
+    height: 40px;
+    background-color: #6060FA;
+    border-radius: 20px;
 }
 
 /* Partie basse de l'écran */
@@ -58,6 +95,9 @@ header i {
 .lower-screen {
     height: 50vh;
     border: 1px solid blue;
+    background-image: url('img/battleground_mobile.jpeg');
+    background-size: cover;
+    background-position: center;
 }
 
 /* PENSER A CIBLER L'ID POWER AVEC LE JS POUR CHANGER LA CLASSE ET LE STYLE SUIVANT JOUEUR EN COURS */
