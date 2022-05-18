@@ -26,9 +26,12 @@ let holdScorePl2 = document.getElementById("global-pl2");
 // on cible le joueur en cours
 let activePlayer = document.getElementById("active-player");
 
+// on cible l'icône bootstrap du dé
+diceImg = document.getElementById('dice-img');
+
 rollButton.addEventListener("click", () => {
     let diceRoll = roll1d6();
-    diceImg = document.getElementById('dice-img');
+    
     // suivant le résultat du dé, on affiche une icône différente
     switch (diceRoll) {
         case 1:
@@ -85,6 +88,6 @@ holdButton.addEventListener("click", () => {
     }
     
     // dans tous les cas, on remet le compteur de la manche à zéro
-    roundScore.innerText = "0";    
+    roundScore.innerText = "0";  
 
 });

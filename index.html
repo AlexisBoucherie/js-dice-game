@@ -10,18 +10,39 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
 </head>
 <body>
+    <header>
+        <button id="rules"><i class="bi bi-info-circle"></i> RULES</button>
+        <button id="newGame">NEW GAME <i class="bi bi-arrow-clockwise"></i></button>
+    </header>
     <main>
-        <p><span id="active-player">Joueur 1</span>, à vous de jouer !</p>
-        <div>
+        <div class="upper-screen">
+            <span id="active-player" style="display: hidden">Joueur 1</span>
             <i id="dice-img"class="bi bi-question-square"></i>
-            <button id="rollMe">Roll !</button>
-            <p>Score du ROUND : <span id="round">0</span></p>
+            <div class="power">
+                <span id="round">0</span>
+                <p>Spell power</p>
+            </div>
+            <button id="rollMe">ROLL TO CHARGE</button>
+            <button id="holdMe">RELEASE SPELL!</button>
+        </div>
+        <div class="lower-screen">
+            <div class="player2"></div>
+            <div class="wizards">
+                <!-- img wizard1
+                img wizard2 -->
+            </div>
+            <div class="player1"></div>
+
+        </div>
+
+        <!-- <p><span id="active-player">Joueur 1</span>, à vous de jouer !</p>
+        <div>
+            
         </div>
         <div>
-            <button id="holdMe">Hold</button>
             <p>Score GLOBAL (J1) : <span id="global-pl1">0</span></p>
             <p>Score GLOBAL (J2) : <span id="global-pl2">0</span></p>
-        </div>
+        </div> -->
     </main>
     <script src="script.js"></script>
 </body>
