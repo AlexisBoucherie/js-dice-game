@@ -11,11 +11,17 @@
 </head>
 <body>
     <main>
+        <p><span id="active-player">Joueur 1</span>, à vous de jouer !</p>
         <div>
-            <button id="rollMe">Roll !</button>
             <i id="dice-img"class="bi bi-question-square"></i>
+            <button id="rollMe">Roll !</button>
+            <p>Score du ROUND : <span id="round">0</span></p>
         </div>
-        <p>Score du ROUND : <span id="round">0</span></p>
+        <div>
+            <button id="holdMe">Hold</button>
+            <p>Score GLOBAL (J1) : <span id="global-pl1">0</span></p>
+            <p>Score GLOBAL (J2) : <span id="global-pl2">0</span></p>
+        </div>
     </main>
     <script src="script.js"></script>
 </body>

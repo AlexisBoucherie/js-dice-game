@@ -11,10 +11,23 @@ function roll1d6() {
 }
 
 // on cible le bouton pour lancer le dé
-const rollButton = document.getElementById("rollMe");
+let rollButton = document.getElementById("rollMe");
+
+// on cible le bouton pour garder le score de la manche
+let holdButton = document.getElementById("holdMe");
+
+// roundScore est le score de la manche
+let roundScore = document.getElementById("round");
+
+// holdScore est le score global des joueurs
+let holdScorePl1 = document.getElementById("global-pl1");
+let holdScorePl2 = document.getElementById("global-pl2");
+
+// on cible le joueur en cours
+let activePlayer = document.getElementById("active-player");
 
 rollButton.addEventListener("click", () => {
-    var diceRoll = roll1d6();
+    let diceRoll = roll1d6();
     diceImg = document.getElementById('dice-img');
     // suivant le résultat du dé, on affiche une icône différente
     switch (diceRoll) {
@@ -40,14 +53,38 @@ rollButton.addEventListener("click", () => {
             break;
         }
     
-    // roundScore est le score de la manche
-    const roundScore = document.getElementById("round");
     // en cas de 1 sur le dé, le score repart à zéro
     if (diceRoll == 1) {
         roundScore.innerText = 0;
+        // et le joueur actif change
+        if(activePlayer.innerText == "Joueur 1") {
+            activePlayer.innerText = "Joueur 2";
+        } else {
+            activePlayer.innerText = "Joueur 1";
+        }
+
     } else {
         // avec le parseInt on convertit les scores en Int et on les cumule à chaque lancer
         roundScore.innerText = parseInt(roundScore.innerText) + parseInt(diceRoll);
     }
 });
 
+// on crée une fonction pour transférer le score de la manche vers le score global du joueur
+holdButton.addEventListener("click", () => {
+    
+    //si le joueur en cours est le joueur 1
+    if(activePlayer.innerText == "Joueur 1") {
+        holdScorePl1.innerText = parseInt(holdScorePl1.innerText) + parseInt(roundScore.innerText);
+        activePlayer.innerText = "Joueur 2";
+
+    //si le joueur en cours est le joueur 2
+    } else {
+        holdScorePl2.innerText = parseInt(holdScorePl2.innerText) + parseInt(roundScore.innerText);
+        activePlayer.innerText = "Joueur 1";
+
+    }
+    
+    // dans tous les cas, on remet le compteur de la manche à zéro
+    roundScore.innerText = "0";    
+
+});
