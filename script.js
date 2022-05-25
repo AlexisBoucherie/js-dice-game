@@ -146,6 +146,20 @@ holdButton.addEventListener("click", () => {
         progressPl2.style.backgroundColor = "green";
     }
 
+
+    // on empêche les barres d'aller au dessous de 0
+    // et on déclare un vainqueur
+    if(parseInt(holdScorePl1.innerText) <= 0) {
+        holdScorePl1.innerText = 0;
+        alert("Red Wizard wins the battle!");
+    }
+    if(parseInt(holdScorePl2.innerText) <= 0) {
+        holdScorePl2.innerText = 0;
+        alert("Red Wizard wins the battle!");
+    }
+
+
+
 });
 
 
