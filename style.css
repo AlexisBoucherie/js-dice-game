@@ -48,12 +48,14 @@ header button {
     justify-content: space-around;
     align-items: center;
     width: 40vw;
+    height: 10vh;
+    max-height: 50px;
     border-radius: 10px;
     background-color: #f1c791;
 }
 
 header i {
-    font-size: 30px;
+    font-size: 25px;
 }
 
 header p {
@@ -228,6 +230,10 @@ header p {
     
     header {
         justify-content: flex-end;
+    }
+
+    header i {
+        font-size: 30px;
     }
 
     header button {
