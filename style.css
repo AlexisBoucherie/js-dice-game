@@ -224,6 +224,40 @@ header p {
     text-align: center;
   }
 
+  @media screen and (min-width: 650px) {
+    
+    header {
+        justify-content: flex-end;
+    }
+
+    header button {
+        width: 20vw;
+        margin-left: 20px;
+    }
+    
+    .power, .upper-screen button {
+        width: 20vw;
+    }
+
+    .lower-screen {
+        padding-left: 20vw;
+        padding-right: 20vw;
+    }
+
+    .player {
+        width: 30vw;
+    }
+
+    body {
+        background-image: url('img/brickwall-large.jpeg');
+    }
+
+    .lower-screen {
+        background-image: url('img/battleground.jpeg');
+        background-size: contain;
+    }
+  }
+
 /* --- TO DO LIST (améliorations) ---
 - Desktop version
 - ajout d'une musique de fond

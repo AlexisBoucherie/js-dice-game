@@ -103,7 +103,7 @@ function rollDice() {
         // avec le parseInt on convertit les scores en Int et on les cumule à chaque lancer
         roundScore.innerText = parseInt(roundScore.innerText) + parseInt(diceRoll);
     }
-});
+};
 
 // on crée une fonction pour transférer le score de la manche vers le score global du joueur
 // (ici on soustrait en fait la valeur du round à celle de la barre de progrès = PV)
@@ -162,7 +162,7 @@ function holdScore() {
         endGame();
     }
 
-});
+};
 
 
 // une fonction pour recharger la page
@@ -170,6 +170,8 @@ newGame.addEventListener("click", () => {location.reload();});
 
 // une fonction pour mettre fin au jeu
 function endGame() {
+    rollButton.disabled = true;
+    holdButton.disabled = true;
     rollButton.removeEventListener("click", rollDice);
     holdButton.removeEventListener("click", holdScore);
 }
@@ -201,3 +203,9 @@ window.addEventListener("click", function(event) {
         modal.style.display = "none";
     }
 });
+
+/* --- TO DO LIST (améliorations) ---
+- ajout d'une musique de fond
+- ajout de sounds fx
+- ajout d'animation de sort
+*/
