@@ -58,7 +58,9 @@ function changeColor() {
 
 // --- EVENEMENTS ---
 
-rollButton.addEventListener("click", () => {
+rollButton.addEventListener("click", rollDice);
+
+function rollDice() {
     let diceRoll = roll1d6();
     
     // suivant le résultat du dé, on affiche une icône différente
@@ -105,7 +107,9 @@ rollButton.addEventListener("click", () => {
 
 // on crée une fonction pour transférer le score de la manche vers le score global du joueur
 // (ici on soustrait en fait la valeur du round à celle de la barre de progrès = PV)
-holdButton.addEventListener("click", () => {
+holdButton.addEventListener("click", holdScore);
+
+function holdScore() {
 
     //si le joueur en cours est le joueur 1
     if(activePlayer.innerText == "Blue Wizard") {
@@ -150,12 +154,10 @@ holdButton.addEventListener("click", () => {
     // on empêche les barres d'aller au dessous de 0
     // et on déclare un vainqueur
     if(parseInt(holdScorePl1.innerText) <= 0) {
-        holdScorePl1.innerText = 0;
         alert("Red Wizard wins the battle!");
         endGame();
     }
     if(parseInt(holdScorePl2.innerText) <= 0) {
-        holdScorePl2.innerText = 0;
         alert("Blue Wizard wins the battle!");
         endGame();
     }
@@ -168,8 +170,8 @@ newGame.addEventListener("click", () => {location.reload();});
 
 // une fonction pour mettre fin au jeu
 function endGame() {
-    rollButton.removeEventListener("click");
-    holdButton.removeEventListener("click");
+    rollButton.removeEventListener("click", rollDice);
+    holdButton.removeEventListener("click", holdScore);
 }
 
 // --- MODAL (Rules) ---
