@@ -152,13 +152,13 @@ holdButton.addEventListener("click", () => {
     if(parseInt(holdScorePl1.innerText) <= 0) {
         holdScorePl1.innerText = 0;
         alert("Red Wizard wins the battle!");
+        endGame();
     }
     if(parseInt(holdScorePl2.innerText) <= 0) {
         holdScorePl2.innerText = 0;
-        alert("Red Wizard wins the battle!");
+        alert("Blue Wizard wins the battle!");
+        endGame();
     }
-
-
 
 });
 
@@ -166,10 +166,11 @@ holdButton.addEventListener("click", () => {
 // une fonction pour recharger la page
 newGame.addEventListener("click", () => {location.reload();});
 
-// une fonction pour consulter les règles
-seeRules.addEventListener("click", () => {
-
-});
+// une fonction pour mettre fin au jeu
+function endGame() {
+    rollButton.removeEventListener("click");
+    holdButton.removeEventListener("click");
+}
 
 // --- MODAL (Rules) ---
 
